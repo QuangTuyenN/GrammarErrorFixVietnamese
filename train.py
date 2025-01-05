@@ -7,9 +7,9 @@ from transformers import DataCollatorForSeq2Seq
 from transformers import Seq2SeqTrainer, Seq2SeqTrainingArguments, MT5ForConditionalGeneration
 
 
-os.environ["HUGGINGFACE_WRITE_TOKEN"] = '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'
+os.environ["HUGGINGFACE_WRITE_TOKEN"] = ''
 
-login('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')
+login('HUGGINGFACE_WRITE_TOKEN')
 
 dataset = load_dataset("bmd1905/error-correction-vi")
 
