@@ -5,11 +5,14 @@ from transformers import AutoTokenizer
 import torch
 from transformers import DataCollatorForSeq2Seq
 from transformers import Seq2SeqTrainer, Seq2SeqTrainingArguments, MT5ForConditionalGeneration
+from dotenv import load_dotenv
 
+try:
+    load_dotenv(dotenv_path=".env")
+except Exception as bug:
+    print("Error went loading environment variables: ", bug)
 
-os.environ["HUGGINGFACE_WRITE_TOKEN"] = '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'
-
-login('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')
+login(os.environ.get("HUGGINGFACE_WRITE_TOKEN", "hf-"))
 
 dataset = load_dataset("bmd1905/error-correction-vi")
 
